@@ -6,6 +6,7 @@ Autor: Monolith
 
 Pobrać pliki *.xml, a następnie przeciągnąć je do okienka Mudleta lub zainstalować przez Package Manager.
 Przed instalacją nowych należy skasować stare.
+Do działania kalendarza nie są wymagane żadne dodatkowe skrypty.
 
 ## Użytkowanie
 
