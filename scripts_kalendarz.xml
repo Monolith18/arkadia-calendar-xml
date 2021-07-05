@@ -49,8 +49,6 @@ kalendarz_imp_zachod = {17, 18, 18, 19, 20, 21, 21, 22, 21, 20, 20, 19, 18, 17, 
 
 kalendarz_imp_pelnia = {26, 51, 76, 102, 126, 151, 176, 227, 251, 276, 326, 351, 376}
 
-kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 300, 326, 351}
-
 kalendarz_imp_swieta = {1, 67, 167, 201, 267, 367}
 
 kalendarz_imp_swieta_nazwy = {"Hexentag (Nowy Rok, Noc Czarownic - Morr)", "Mitterfruhl (Wiosenna Rownonoc, Rozkwitanie - Taal, Ulryk, Mannan)", "Sonnenstill (Letnie Przesilenie, Dzien Slonca - Taal, Rhya)", "Geheimnisnacht (Noc Tajemnicy - Morr)", "Mitterherbst (Jesienna Rownonoc, Przekwitanie - Ulryk, Taal, Rhya)", "Mondstill (Zimowe Przesilenie, Uspienie - Ulryk, Taal, Rhya)"}
@@ -175,6 +173,471 @@ kalendarz_pm = {
   "w nocy",
   "w przyblizeniu poludnie",
 } 
+
+function wyswietl_warianty_ishtar(wariant_miesiac)
+
+if wariant_miesiac == 1 then
+echo([[
++-------+-------------+-------------+-------------+-------------+-------------+
+| DZIEN | SAOVINE (1) | SAOVINE (2) | SAOVINE (3) | SAOVINE (4) | SAOVINE (5) |
++-------+-------------+-------------+-------------+-------------+-------------+
+|     1 | O           | -           | +           | -           | +           |
+|     2 | O           | -           | +           | -           | +           |
+|     3 | -           | -           | +           | -           | +           |
+|     4 | -           | N           | +           | -           | +           |
+|     5 | -           | +           | +           | -           | +           |
+|     6 | -           | +           | O           | -           | +           |
+|     7 | -           | +           | O           | -           | +           |
+|     8 | -           | +           | -           | -           | +           |
+|     9 | -           | +           | -           | N           | +           |
+|    10 | -           | +           | -           | +           | +           |
+|    11 | -           | +           | -           | +           | O           |
+|    12 | -           | +           | -           | +           | O           |
+|    13 | -           | +           | -           | +           | -           |
+|    14 | N           | +           | -           | +           | -           |
+|    15 | +           | +           | -           | +           | -           |
+|    16 | +           | O           | -           | +           | -           |
+|    17 | +           | O           | -           | +           | -           |
+|    18 | +           | -           | -           | +           | -           |
+|    19 | +           | -           | N           | +           | -           |
+|    20 | +           | -           | +           | +           | -           |
+|    21 | +           | -           | +           | O           | -           |
+|    22 | +           | -           | +           | O           | -           |
+|    23 | +           | -           | +           | -           | -           |
+|    24 | +           | -           | +           | -           | N           |
+|    25 | +           | -           | +           | -           | +           |
+|    26 | O           | -           | +           | -           | +           |
+|    27 | O           | -           | +           | -           | +           |
+|    28 | -           | -           | +           | -           | +           |
+|    29 | -           | N           | +           | -           | +           |
+|    30 | -           | +           | +           | -           | +           |
+|    31 | -           | +           | O           | -           | +           |
+|    32 | -           | +           | O           | -           | +           |
+|    33 | -           | +           | -           | -           | +           |
+|    34 | -           | +           | -           | N           | +           |
+|    35 | -           | +           | -           | +           | +           |
+|    36 | -           | +           | -           | +           | O           |
+|    37 | -           | +           | -           | +           | O           |
+|    38 | -           | +           | -           | +           | -           |
+|    39 | N           | +           | -           | +           | -           |
+|    40 | +           | +           | -           | +           | -           |
+|    41 | +           | O           | -           | +           | -           |
+|    42 | +           | O           | -           | +           | -           |
+|    43 | +           | -           | -           | +           | -           |
+|    44 | +           | -           | N           | +           | -           |
+|    45 | +           | -           | +           | +           | -           |
++-------+-------------+-------------+-------------+-------------+-------------+
+]]) end
+
+
+if wariant_miesiac == 2 then
+echo([[
+
++-------+----------+----------+----------+----------+----------+
+| DZIEN | YULE (1) | YULE (2) | YULE (3) | YULE (4) | YULE (5) |
++-------+----------+----------+----------+----------+----------+
+|     1 | +        | -        | +        | O        | -        |
+|     2 | +        | -        | +        | O        | -        |
+|     3 | +        | -        | +        | -        | -        |
+|     4 | +        | -        | +        | -        | N        |
+|     5 | +        | -        | +        | -        | +        |
+|     6 | O        | -        | +        | -        | +        |
+|     7 | O        | -        | +        | -        | +        |
+|     8 | -        | -        | +        | -        | +        |
+|     9 | -        | N        | +        | -        | +        |
+|    10 | -        | +        | +        | -        | +        |
+|    11 | -        | +        | O        | -        | +        |
+|    12 | -        | +        | O        | -        | +        |
+|    13 | -        | +        | -        | -        | +        |
+|    14 | -        | +        | -        | N        | +        |
+|    15 | -        | +        | -        | +        | +        |
+|    16 | -        | +        | -        | +        | O        |
+|    17 | -        | +        | -        | +        | O        |
+|    18 | -        | +        | -        | +        | -        |
+|    19 | N        | +        | -        | +        | -        |
+|    20 | +        | +        | -        | +        | -        |
+|    21 | +        | O        | -        | +        | -        |
+|    22 | +        | O        | -        | +        | -        |
+|    23 | +        | -        | -        | +        | -        |
+|    24 | +        | -        | N        | +        | -        |
+|    25 | +        | -        | +        | +        | -        |
+|    26 | +        | -        | +        | O        | -        |
+|    27 | +        | -        | +        | O        | -        |
+|    28 | +        | -        | +        | -        | -        |
+|    29 | +        | -        | +        | -        | N        |
+|    30 | +        | -        | +        | -        | +        |
+|    31 | O        | -        | +        | -        | +        |
+|    32 | O        | -        | +        | -        | +        |
+|    33 | -        | -        | +        | -        | +        |
+|    34 | -        | N        | +        | -        | +        |
+|    35 | -        | +        | +        | -        | +        |
+|    36 | -        | +        | O        | -        | +        |
+|    37 | -        | +        | O        | -        | +        |
+|    38 | -        | +        | -        | -        | +        |
+|    39 | -        | +        | -        | N        | +        |
+|    40 | -        | +        | -        | +        | +        |
+|    41 | -        | +        | -        | +        | O        |
+|    42 | -        | +        | -        | +        | O        |
+|    43 | -        | +        | -        | +        | -        |
+|    44 | N        | +        | -        | +        | -        |
+|    45 | +        | +        | -        | +        | -        |
++-------+----------+----------+----------+----------+----------+
+
+]]) end
+
+
+
+if wariant_miesiac == 3 then
+echo([[
+
++-------+-------------+-------------+-------------+-------------+-------------+
+| DZIEN | IMBAELK (1) | IMBAELK (2) | IMBAELK (3) | IMBAELK (4) | IMBAELK (5) |
++-------+-------------+-------------+-------------+-------------+-------------+
+|     1 | +           | O           | -           | +           | -           |
+|     2 | +           | O           | -           | +           | -           |
+|     3 | +           | -           | -           | +           | -           |
+|     4 | +           | -           | N           | +           | -           |
+|     5 | +           | -           | +           | +           | -           |
+|     6 | +           | -           | +           | O           | -           |
+|     7 | +           | -           | +           | O           | -           |
+|     8 | +           | -           | +           | -           | -           |
+|     9 | +           | -           | +           | -           | N           |
+|    10 | +           | -           | +           | -           | +           |
+|    11 | O           | -           | +           | -           | +           |
+|    12 | O           | -           | +           | -           | +           |
+|    13 | -           | -           | +           | -           | +           |
+|    14 | -           | N           | +           | -           | +           |
+|    15 | -           | +           | +           | -           | +           |
+|    16 | -           | +           | O           | -           | +           |
+|    17 | -           | +           | O           | -           | +           |
+|    18 | -           | +           | -           | -           | +           |
+|    19 | -           | +           | -           | N           | +           |
+|    20 | -           | +           | -           | +           | +           |
+|    21 | -           | +           | -           | +           | O           |
+|    22 | -           | +           | -           | +           | O           |
+|    23 | -           | +           | -           | +           | -           |
+|    24 | N           | +           | -           | +           | -           |
+|    25 | +           | +           | -           | +           | -           |
+|    26 | +           | O           | -           | +           | -           |
+|    27 | +           | O           | -           | +           | -           |
+|    28 | +           | -           | -           | +           | -           |
+|    29 | +           | -           | N           | +           | -           |
+|    30 | +           | -           | +           | +           | -           |
+|    31 | +           | -           | +           | O           | -           |
+|    32 | +           | -           | +           | O           | -           |
+|    33 | +           | -           | +           | -           | -           |
+|    34 | +           | -           | +           | -           | N           |
+|    35 | +           | -           | +           | -           | +           |
+|    36 | O           | -           | +           | -           | +           |
+|    37 | O           | -           | +           | -           | +           |
+|    38 | -           | -           | +           | -           | +           |
+|    39 | -           | N           | +           | -           | +           |
+|    40 | -           | +           | +           | -           | +           |
+|    41 | -           | +           | O           | -           | +           |
+|    42 | -           | +           | O           | -           | +           |
+|    43 | -           | +           | -           | -           | +           |
+|    44 | -           | +           | -           | N           | +           |
+|    45 | -           | +           | -           | +           | +           |
++-------+-------------+-------------+-------------+-------------+-------------+
+
+
+
+]]) end
+
+
+
+
+if wariant_miesiac == 4 then
+echo([[
+
++-------+-----------+-----------+-----------+-----------+-----------+
+| DZIEN | BIRKE (1) | BIRKE (2) | BIRKE (3) | BIRKE (4) | BIRKE (5) |
++-------+-----------+-----------+-----------+-----------+-----------+
+|     1 | -         | +         | -         | +         | O         |
+|     2 | -         | +         | -         | +         | O         |
+|     3 | -         | +         | -         | +         | -         |
+|     4 | N         | +         | -         | +         | -         |
+|     5 | +         | +         | -         | +         | -         |
+|     6 | +         | O         | -         | +         | -         |
+|     7 | +         | O         | -         | +         | -         |
+|     8 | +         | -         | -         | +         | -         |
+|     9 | +         | -         | N         | +         | -         |
+|    10 | +         | -         | +         | +         | -         |
+|    11 | +         | -         | +         | O         | -         |
+|    12 | +         | -         | +         | O         | -         |
+|    13 | +         | -         | +         | -         | -         |
+|    14 | +         | -         | +         | -         | N         |
+|    15 | +         | -         | +         | -         | +         |
+|    16 | O         | -         | +         | -         | +         |
+|    17 | O         | -         | +         | -         | +         |
+|    18 | -         | -         | +         | -         | +         |
+|    19 | -         | N         | +         | -         | +         |
+|    20 | -         | +         | +         | -         | +         |
+|    21 | -         | +         | O         | -         | +         |
+|    22 | -         | +         | O         | -         | +         |
+|    23 | -         | +         | -         | -         | +         |
+|    24 | -         | +         | -         | N         | +         |
+|    25 | -         | +         | -         | +         | +         |
+|    26 | -         | +         | -         | +         | O         |
+|    27 | -         | +         | -         | +         | O         |
+|    28 | -         | +         | -         | +         | -         |
+|    29 | N         | +         | -         | +         | -         |
+|    30 | +         | +         | -         | +         | -         |
+|    31 | +         | O         | -         | +         | -         |
+|    32 | +         | O         | -         | +         | -         |
+|    33 | +         | -         | -         | +         | -         |
+|    34 | +         | -         | N         | +         | -         |
+|    35 | +         | -         | +         | +         | -         |
+|    36 | +         | -         | +         | O         | -         |
+|    37 | +         | -         | +         | O         | -         |
+|    38 | +         | -         | +         | -         | -         |
+|    39 | +         | -         | +         | -         | N         |
+|    40 | +         | -         | +         | -         | +         |
+|    41 | O         | -         | +         | -         | +         |
+|    42 | O         | -         | +         | -         | +         |
+|    43 | -         | -         | +         | -         | +         |
+|    44 | -         | N         | +         | -         | +         |
+|    45 | -         | +         | +         | -         | +         |
++-------+-----------+-----------+-----------+-----------+-----------+
+
+
+
+
+]]) end
+
+
+if wariant_miesiac == 5 then
+echo([[
++-------+------------+------------+------------+------------+------------+
+| DZIEN | BLATHE (1) | BLATHE (2) | BLATHE (3) | BLATHE (4) | BLATHE (5) |
++-------+------------+------------+------------+------------+------------+
+|     1 | -          | +          | O          | -          | +          |
+|     2 | -          | +          | O          | -          | +          |
+|     3 | -          | +          | -          | -          | +          |
+|     4 | -          | +          | -          | N          | +          |
+|     5 | -          | +          | -          | +          | +          |
+|     6 | -          | +          | -          | +          | O          |
+|     7 | -          | +          | -          | +          | O          |
+|     8 | -          | +          | -          | +          | -          |
+|     9 | N          | +          | -          | +          | -          |
+|    10 | +          | +          | -          | +          | -          |
+|    11 | +          | O          | -          | +          | -          |
+|    12 | +          | O          | -          | +          | -          |
+|    13 | +          | -          | -          | +          | -          |
+|    14 | +          | -          | N          | +          | -          |
+|    15 | +          | -          | +          | +          | -          |
+|    16 | +          | -          | +          | O          | -          |
+|    17 | +          | -          | +          | O          | -          |
+|    18 | +          | -          | +          | -          | -          |
+|    19 | +          | -          | +          | -          | N          |
+|    20 | +          | -          | +          | -          | +          |
+|    21 | O          | -          | +          | -          | +          |
+|    22 | O          | -          | +          | -          | +          |
+|    23 | -          | -          | +          | -          | +          |
+|    24 | -          | N          | +          | -          | +          |
+|    25 | -          | +          | +          | -          | +          |
+|    26 | -          | +          | O          | -          | +          |
+|    27 | -          | +          | O          | -          | +          |
+|    28 | -          | +          | -          | -          | +          |
+|    29 | -          | +          | -          | N          | +          |
+|    30 | -          | +          | -          | +          | +          |
+|    31 | -          | +          | -          | +          | O          |
+|    32 | -          | +          | -          | +          | O          |
+|    33 | -          | +          | -          | +          | -          |
+|    34 | N          | +          | -          | +          | -          |
+|    35 | +          | +          | -          | +          | -          |
+|    36 | +          | O          | -          | +          | -          |
+|    37 | +          | O          | -          | +          | -          |
+|    38 | +          | -          | -          | +          | -          |
+|    39 | +          | -          | N          | +          | -          |
+|    40 | +          | -          | +          | +          | -          |
+|    41 | +          | -          | +          | O          | -          |
+|    42 | +          | -          | +          | O          | -          |
+|    43 | +          | -          | +          | -          | -          |
+|    44 | +          | -          | +          | -          | N          |
+|    45 | +          | -          | +          | -          | +          |
++-------+------------+------------+------------+------------+------------+
+
+
+
+
+
+]]) end
+
+
+if wariant_miesiac == 6 then
+echo([[
++-------+------------+------------+------------+------------+------------+
+| DZIEN | FEAINN (1) | FEAINN (2) | FEAINN (3) | FEAINN (4) | FEAINN (5) |
++-------+------------+------------+------------+------------+------------+
+|     1 | O          | -          | +          | -          | +          |
+|     2 | O          | -          | +          | -          | +          |
+|     3 | -          | -          | +          | -          | +          |
+|     4 | -          | N          | +          | -          | +          |
+|     5 | -          | +          | +          | -          | +          |
+|     6 | -          | +          | O          | -          | +          |
+|     7 | -          | +          | O          | -          | +          |
+|     8 | -          | +          | -          | -          | +          |
+|     9 | -          | +          | -          | N          | +          |
+|    10 | -          | +          | -          | +          | +          |
+|    11 | -          | +          | -          | +          | O          |
+|    12 | -          | +          | -          | +          | O          |
+|    13 | -          | +          | -          | +          | -          |
+|    14 | N          | +          | -          | +          | -          |
+|    15 | +          | +          | -          | +          | -          |
+|    16 | +          | O          | -          | +          | -          |
+|    17 | +          | O          | -          | +          | -          |
+|    18 | +          | -          | -          | +          | -          |
+|    19 | +          | -          | N          | +          | -          |
+|    20 | +          | -          | +          | +          | -          |
+|    21 | +          | -          | +          | O          | -          |
+|    22 | +          | -          | +          | O          | -          |
+|    23 | +          | -          | +          | -          | -          |
+|    24 | +          | -          | +          | -          | N          |
+|    25 | +          | -          | +          | -          | +          |
+|    26 | O          | -          | +          | -          | +          |
+|    27 | O          | -          | +          | -          | +          |
+|    28 | -          | -          | +          | -          | +          |
+|    29 | -          | N          | +          | -          | +          |
+|    30 | -          | +          | +          | -          | +          |
+|    31 | -          | +          | O          | -          | +          |
+|    32 | -          | +          | O          | -          | +          |
+|    33 | -          | +          | -          | -          | +          |
+|    34 | -          | +          | -          | N          | +          |
+|    35 | -          | +          | -          | +          | +          |
+|    36 | -          | +          | -          | +          | O          |
+|    37 | -          | +          | -          | +          | O          |
+|    38 | -          | +          | -          | +          | -          |
+|    39 | N          | +          | -          | +          | -          |
+|    40 | +          | +          | -          | +          | -          |
+|    41 | +          | O          | -          | +          | -          |
+|    42 | +          | O          | -          | +          | -          |
+|    43 | +          | -          | -          | +          | -          |
+|    44 | +          | -          | N          | +          | -          |
+|    45 | +          | -          | +          | +          | -          |
++-------+------------+------------+------------+------------+------------+
+
+
+
+
+
+
+]]) end
+
+
+
+if wariant_miesiac == 7 then
+echo([[
++-------+------------+------------+------------+------------+------------+
+| DZIEN | LAMMAS (1) | LAMMAS (2) | LAMMAS (3) | LAMMAS (4) | LAMMAS (5) |
++-------+------------+------------+------------+------------+------------+
+|     1 | +          | -          | +          | O          | -          |
+|     2 | +          | -          | +          | O          | -          |
+|     3 | +          | -          | +          | -          | -          |
+|     4 | +          | -          | +          | -          | N          |
+|     5 | +          | -          | +          | -          | +          |
+|     6 | O          | -          | +          | -          | +          |
+|     7 | O          | -          | +          | -          | +          |
+|     8 | -          | -          | +          | -          | +          |
+|     9 | -          | N          | +          | -          | +          |
+|    10 | -          | +          | +          | -          | +          |
+|    11 | -          | +          | O          | -          | +          |
+|    12 | -          | +          | O          | -          | +          |
+|    13 | -          | +          | -          | -          | +          |
+|    14 | -          | +          | -          | N          | +          |
+|    15 | -          | +          | -          | +          | +          |
+|    16 | -          | +          | -          | +          | O          |
+|    17 | -          | +          | -          | +          | O          |
+|    18 | -          | +          | -          | +          | -          |
+|    19 | N          | +          | -          | +          | -          |
+|    20 | +          | +          | -          | +          | -          |
+|    21 | +          | O          | -          | +          | -          |
+|    22 | +          | O          | -          | +          | -          |
+|    23 | +          | -          | -          | +          | -          |
+|    24 | +          | -          | N          | +          | -          |
+|    25 | +          | -          | +          | +          | -          |
+|    26 | +          | -          | +          | O          | -          |
+|    27 | +          | -          | +          | O          | -          |
+|    28 | +          | -          | +          | -          | -          |
+|    29 | +          | -          | +          | -          | N          |
+|    30 | +          | -          | +          | -          | +          |
+|    31 | O          | -          | +          | -          | +          |
+|    32 | O          | -          | +          | -          | +          |
+|    33 | -          | -          | +          | -          | +          |
+|    34 | -          | N          | +          | -          | +          |
+|    35 | -          | +          | +          | -          | +          |
+|    36 | -          | +          | O          | -          | +          |
+|    37 | -          | +          | O          | -          | +          |
+|    38 | -          | +          | -          | -          | +          |
+|    39 | -          | +          | -          | N          | +          |
+|    40 | -          | +          | -          | +          | +          |
+|    41 | -          | +          | -          | +          | O          |
+|    42 | -          | +          | -          | +          | O          |
+|    43 | -          | +          | -          | +          | -          |
+|    44 | N          | +          | -          | +          | -          |
+|    45 | +          | +          | -          | +          | -          |
++-------+------------+------------+------------+------------+------------+
+
+]]) end
+
+
+
+
+if wariant_miesiac == 8 then
+echo([[
++-------+-----------+-----------+-----------+-----------+-----------+
+| DZIEN | VELEN (1) | VELEN (2) | VELEN (3) | VELEN (4) | VELEN (5) |
++-------+-----------+-----------+-----------+-----------+-----------+
+|     1 | +         | O         | -         | +         | -         |
+|     2 | +         | O         | -         | +         | -         |
+|     3 | +         | -         | -         | +         | -         |
+|     4 | +         | -         | N         | +         | -         |
+|     5 | +         | -         | +         | +         | -         |
+|     6 | +         | -         | +         | O         | -         |
+|     7 | +         | -         | +         | O         | -         |
+|     8 | +         | -         | +         | -         | -         |
+|     9 | +         | -         | +         | -         | N         |
+|    10 | +         | -         | +         | -         | +         |
+|    11 | O         | -         | +         | -         | +         |
+|    12 | O         | -         | +         | -         | +         |
+|    13 | -         | -         | +         | -         | +         |
+|    14 | -         | N         | +         | -         | +         |
+|    15 | -         | +         | +         | -         | +         |
+|    16 | -         | +         | O         | -         | +         |
+|    17 | -         | +         | O         | -         | +         |
+|    18 | -         | +         | -         | -         | +         |
+|    19 | -         | +         | -         | N         | +         |
+|    20 | -         | +         | -         | +         | +         |
+|    21 | -         | +         | -         | +         | O         |
+|    22 | -         | +         | -         | +         | O         |
+|    23 | -         | +         | -         | +         | -         |
+|    24 | N         | +         | -         | +         | -         |
+|    25 | +         | +         | -         | +         | -         |
+|    26 | +         | O         | -         | +         | -         |
+|    27 | +         | O         | -         | +         | -         |
+|    28 | +         | -         | -         | +         | -         |
+|    29 | +         | -         | N         | +         | -         |
+|    30 | +         | -         | +         | +         | -         |
+|    31 | +         | -         | +         | O         | -         |
+|    32 | +         | -         | +         | O         | -         |
+|    33 | +         | -         | +         | -         | -         |
+|    34 | +         | -         | +         | -         | N         |
+|    35 | +         | -         | +         | -         | +         |
+|    36 | O         | -         | +         | -         | +         |
+|    37 | O         | -         | +         | -         | +         |
+|    38 | -         | -         | +         | -         | +         |
+|    39 | -         | N         | +         | -         | +         |
+|    40 | -         | +         | +         | -         | +         |
+|    41 | -         | +         | O         | -         | +         |
+|    42 | -         | +         | O         | -         | +         |
+|    43 | -         | +         | -         | -         | +         |
+|    44 | -         | +         | -         | N         | +         |
+|    45 | -         | +         | -         | +         | +         |
++-------+-----------+-----------+-----------+-----------+-----------+
+
+]]) end
+
+end
   
 function convert_time(time)
   
@@ -202,14 +665,14 @@ local am_pm_fix = 0
 local poludnie_fix = 0
 
 miesiac = 3
-for i=1,12,1 do
+for i=1,#kalendarz_imp_miesiac_txt,1 do
   if string.find(kalendarz_astro, kalendarz_imp_miesiac_txt[i]) then
     miesiac = i
     break
   end
 end
 
-for i=1,5,1 do
+for i=1,#kalendarz_am,1 do
   if string.find(kalendarz_astro, kalendarz_am[i]) then
     am_pm = 0
     break
@@ -220,7 +683,7 @@ if string.find(kalendarz_astro, kalendarz_am[5]) then
   godzina = 0
 end
 
-for i=1,5,1 do
+for i=1,#kalendarz_pm,1 do
   if string.find(kalendarz_astro, kalendarz_pm[i]) then
     am_pm = 1
     if i == 4 then am_pm_fix = 1 end
@@ -233,7 +696,7 @@ for i=1,5,1 do
   end
 end
 
-for i=1,12,1 do
+for i=1,#kalendarz_godzina,1 do
   if string.find(kalendarz_astro, kalendarz_godzina[i]) then
     godzina = i
     break
@@ -252,21 +715,21 @@ if am_pm == 1 and godzina == 2 and am_pm_fix == 1 then delta = (2*120) end
 if am_pm == 1 and godzina == 3 and am_pm_fix == 1 then delta = (3*120) end
 if am_pm == 1 and godzina == 4 and am_pm_fix == 1 then delta = (4*120) end
 
-for i=33,1,-1 do
+for i=#kalendarz_imp_dni_liczebniki,1,-1 do
   if string.find(kalendarz_astro, kalendarz_imp_dni_liczebniki[i]) then
     dzien=i+kalendarz_imp_delta_dni[miesiac]
     break
   end
 end
 
-for i=1,6,1 do
+for i=1,#kalendarz_imp_swieta_nazwydni,1 do
   if string.find(kalendarz_astro, kalendarz_imp_swieta_nazwydni[i]) then
     dzien=kalendarz_imp_swieta[i]
     break
   end
 end
 
-for i=1,16,1 do
+for i=1,#kalendarz_imp_now,1 do
   if dzien &lt;= kalendarz_imp_now[i] then
     now=kalendarz_imp_now[i]
     zachod=kalendarz_imp_zachod[i]
@@ -277,7 +740,7 @@ for i=1,16,1 do
   end
 end
 
-for i=1,13,1 do
+for i=1,#kalendarz_imp_pelnia,1 do
   if dzien &lt;= kalendarz_imp_pelnia[i] then
     pelnia=kalendarz_imp_pelnia[i]
     break
@@ -286,7 +749,7 @@ for i=1,13,1 do
   end
 end
 
-for i=1,6,1 do
+for i=1,#kalendarz_imp_swieta,1 do
   if dzien &lt;= kalendarz_imp_swieta[i] then
     swieto=kalendarz_imp_swieta[i]
     swieto_nazwa=kalendarz_imp_swieta_nazwy[i]
@@ -351,7 +814,15 @@ local pelnia, swieto, swieto_nazwa, festyn
 local am_pm_fix = 0
 local poludnie_fix = 0
 
-for i=1,8,1 do
+if kal_wariant == 0 then kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351} end
+if kal_wariant == nil then kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351} end
+if kal_wariant == 1 then kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351} end
+if kal_wariant == 2 then kalendarz_ish_pelnia = {16, 41, 66, 91, 116, 141, 166, 191, 216, 241, 266, 291, 316, 341} end
+if kal_wariant == 3 then kalendarz_ish_pelnia = {6, 31, 56, 81, 106, 131, 156, 181, 206, 231, 256, 281, 306, 331, 356} end
+if kal_wariant == 4 then kalendarz_ish_pelnia = {21, 46, 71, 96, 121, 146, 171, 196, 221, 246, 271, 296, 321, 346} end
+if kal_wariant == 5 then kalendarz_ish_pelnia = {11, 36, 61, 86, 111, 136, 161, 186, 211, 236, 261, 286, 311, 336} end
+
+for i=1,#kalendarz_ish_miesiac_txt,1 do
   if string.find(kalendarz_astro, kalendarz_ish_miesiac_txt[i]) then
     miesiac = i
     break
@@ -363,7 +834,9 @@ for i=1,8,1 do
   end
 end
 
-for i=1,5,1 do
+if kal_wariant == 0 then wyswietl_warianty_ishtar(miesiac) return end
+
+for i=1,#kalendarz_am,1 do
   if string.find(kalendarz_astro, kalendarz_am[i]) then
     am_pm = 0
     break
@@ -374,7 +847,7 @@ if string.find(kalendarz_astro, kalendarz_am[5]) then
   godzina = 0
 end
 
-for i=1,5,1 do
+for i=1,#kalendarz_pm,1 do
   if string.find(kalendarz_astro, kalendarz_pm[i]) then
     am_pm = 1
     if i == 4 then am_pm_fix = 1 end
@@ -387,7 +860,7 @@ for i=1,5,1 do
   end
 end
 
-for i=1,12,1 do
+for i=1,#kalendarz_godzina,1 do
   if string.find(kalendarz_astro, kalendarz_godzina[i]) then
     godzina = i
     break
@@ -406,21 +879,21 @@ if am_pm == 1 and godzina == 2 and am_pm_fix == 1 then delta = (2*120) end
 if am_pm == 1 and godzina == 3 and am_pm_fix == 1 then delta = (3*120) end
 if am_pm == 1 and godzina == 4 and am_pm_fix == 1 then delta = (4*120) end
 
-for i=45,1,-1 do
+for i=#kalendarz_ish_dni_liczebniki,1,-1 do
   if string.find(kalendarz_astro, kalendarz_ish_dni_liczebniki[i]) then
     dzien=i+kalendarz_ish_delta_dni[miesiac]
     break
     end
 end
 
-for i=1,8,1 do
+for i=1,#kalendarz_ish_swieta_nazwy,1 do
   if string.find(kalendarz_astro, kalendarz_ish_swieta_nazwy[i]) then
     dzien=1+kalendarz_ish_delta_dni[miesiac]
     break
     end
 end
 
-for i=1,15,1 do
+for i=1,#kalendarz_ish_pelnia,1 do
   if dzien &lt;= kalendarz_ish_pelnia[i] then
     pelnia=kalendarz_ish_pelnia[i]
     break
@@ -429,7 +902,7 @@ for i=1,15,1 do
   end
 end
 
-for i=1,8,1 do
+for i=1,#kalendarz_ish_swieta,1 do
   if dzien &lt;= kalendarz_ish_swieta[i] then
     swieto=kalendarz_ish_swieta[i]
     swieto_nazwa=kalendarz_ish_swieta_nazwy[i]
@@ -454,7 +927,7 @@ else
   swieto_delta = (360+kalendarz_ish_swieta[1]-dzien)*2880-delta
 end
 
-for i=1,8,1 do
+for i=1,#kalendarz_ish_festyn,1 do
   if dzien &lt;= (kalendarz_ish_festyn[i]+2) then
     festyn = kalendarz_ish_festyn[i]
     break
@@ -480,6 +953,7 @@ echo("Aktualny czas      : ")
 print(os.date("%c", czas))
 echo("\n")
 
+echo("Obliczenia oparte o wariant  : " .. kal_wariant .. "\n")
 echo("Poczatek najblizszej pelni  : ")
 print(os.date("%c", czas+pelnia_delta))
 echo(" (czyli za okolo " .. convert_time(pelnia_delta) .. " czasu RL)\n\n")
@@ -507,8 +981,6 @@ echo("================================================================\n\n")
 end
 
 function predykcje_astro()
-
-
 
 if kalendarz_astro then
   if kalendarz_imp_ish == 0 then

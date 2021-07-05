@@ -4,12 +4,24 @@
 	<AliasPackage>
 		<Alias isActive="yes" isFolder="no">
 			<name>kalendarz</name>
-			<script>send("czas")
+			<script>local kal_komenda, kal_param
+
+
+if not kal_wariant then kal_wariant = 0 end
+
+kal_komenda = getCmdLine()
+kal_param = string.split(kal_komenda, " ")
+
+if kal_param[2] then kal_wariant = tonumber(kal_param[2]) end
+
+
+send("czas")
 send("ob niebo")
-tempTimer(0.5, [[ predykcje_astro() ]])</script>
+tempTimer(0.5, [[ predykcje_astro() ]])
+</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^/kal$</regex>
+			<regex>(^/kal$)|(^/kal [0-9]+)</regex>
 		</Alias>
 	</AliasPackage>
 </MudletPackage>
