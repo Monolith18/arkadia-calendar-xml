@@ -229,10 +229,8 @@ echo([[
 +-------+-------------+-------------+-------------+-------------+-------------+
 ]]) end
 
-
 if wariant_miesiac == 2 then
 echo([[
-
 +-------+----------+----------+----------+----------+----------+
 | DZIEN | YULE (1) | YULE (2) | YULE (3) | YULE (4) | YULE (5) |
 +-------+----------+----------+----------+----------+----------+
@@ -282,14 +280,10 @@ echo([[
 |    44 | N        | +        | -        | +        | -        |
 |    45 | +        | +        | -        | +        | -        |
 +-------+----------+----------+----------+----------+----------+
-
 ]]) end
-
-
 
 if wariant_miesiac == 3 then
 echo([[
-
 +-------+-------------+-------------+-------------+-------------+-------------+
 | DZIEN | IMBAELK (1) | IMBAELK (2) | IMBAELK (3) | IMBAELK (4) | IMBAELK (5) |
 +-------+-------------+-------------+-------------+-------------+-------------+
@@ -339,17 +333,10 @@ echo([[
 |    44 | -           | +           | -           | N           | +           |
 |    45 | -           | +           | -           | +           | +           |
 +-------+-------------+-------------+-------------+-------------+-------------+
-
-
-
 ]]) end
-
-
-
 
 if wariant_miesiac == 4 then
 echo([[
-
 +-------+-----------+-----------+-----------+-----------+-----------+
 | DZIEN | BIRKE (1) | BIRKE (2) | BIRKE (3) | BIRKE (4) | BIRKE (5) |
 +-------+-----------+-----------+-----------+-----------+-----------+
@@ -399,12 +386,7 @@ echo([[
 |    44 | -         | N         | +         | -         | +         |
 |    45 | -         | +         | +         | -         | +         |
 +-------+-----------+-----------+-----------+-----------+-----------+
-
-
-
-
 ]]) end
-
 
 if wariant_miesiac == 5 then
 echo([[
@@ -457,13 +439,7 @@ echo([[
 |    44 | +          | -          | +          | -          | N          |
 |    45 | +          | -          | +          | -          | +          |
 +-------+------------+------------+------------+------------+------------+
-
-
-
-
-
 ]]) end
-
 
 if wariant_miesiac == 6 then
 echo([[
@@ -516,15 +492,7 @@ echo([[
 |    44 | +          | -          | N          | +          | -          |
 |    45 | +          | -          | +          | +          | -          |
 +-------+------------+------------+------------+------------+------------+
-
-
-
-
-
-
 ]]) end
-
-
 
 if wariant_miesiac == 7 then
 echo([[
@@ -577,11 +545,7 @@ echo([[
 |    44 | N          | +          | -          | +          | -          |
 |    45 | +          | +          | -          | +          | -          |
 +-------+------------+------------+------------+------------+------------+
-
 ]]) end
-
-
-
 
 if wariant_miesiac == 8 then
 echo([[
@@ -634,7 +598,6 @@ echo([[
 |    44 | -         | +         | -         | N         | +         |
 |    45 | -         | +         | -         | +         | +         |
 +-------+-----------+-----------+-----------+-----------+-----------+
-
 ]]) end
 
 end
@@ -815,12 +778,13 @@ local am_pm_fix = 0
 local poludnie_fix = 0
 
 if kal_wariant == 0 then kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351} end
-if kal_wariant == nil then kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351} end
+if kal_wariant == nil then kalendarz_ish_pelnia = {1, 31, 61, 91, 121, 151, 181, 211, 241, 271, 301, 331} end
 if kal_wariant == 1 then kalendarz_ish_pelnia = {1, 26, 51, 76, 101, 126, 151, 176, 201, 226, 251, 276, 301, 326, 351} end
 if kal_wariant == 2 then kalendarz_ish_pelnia = {16, 41, 66, 91, 116, 141, 166, 191, 216, 241, 266, 291, 316, 341} end
 if kal_wariant == 3 then kalendarz_ish_pelnia = {6, 31, 56, 81, 106, 131, 156, 181, 206, 231, 256, 281, 306, 331, 356} end
 if kal_wariant == 4 then kalendarz_ish_pelnia = {21, 46, 71, 96, 121, 146, 171, 196, 221, 246, 271, 296, 321, 346} end
 if kal_wariant == 5 then kalendarz_ish_pelnia = {11, 36, 61, 86, 111, 136, 161, 186, 211, 236, 261, 286, 311, 336} end
+if kal_wariant == 6 then kalendarz_ish_pelnia = {1, 31, 61, 91, 121, 151, 181, 211, 241, 271, 301, 331} end
 
 for i=1,#kalendarz_ish_miesiac_txt,1 do
   if string.find(kalendarz_astro, kalendarz_ish_miesiac_txt[i]) then
@@ -834,7 +798,11 @@ for i=1,#kalendarz_ish_miesiac_txt,1 do
   end
 end
 
-if kal_wariant == 0 then wyswietl_warianty_ishtar(miesiac) return end
+if kal_wariant == 0 then
+  wyswietl_warianty_ishtar(miesiac)
+  kal_wariant = 6
+  return
+end
 
 for i=1,#kalendarz_am,1 do
   if string.find(kalendarz_astro, kalendarz_am[i]) then
@@ -953,7 +921,12 @@ echo("Aktualny czas      : ")
 print(os.date("%c", czas))
 echo("\n")
 
-echo("Obliczenia oparte o wariant  : " .. kal_wariant .. "\n")
+if kal_wariant == 6 then
+  echo("Obliczenia oparte o wariant \"co 30 dni\"\n")
+else
+  echo("Obliczenia oparte o wariant  : " .. kal_wariant .. "\n")
+end
+
 echo("Poczatek najblizszej pelni  : ")
 print(os.date("%c", czas+pelnia_delta))
 echo(" (czyli za okolo " .. convert_time(pelnia_delta) .. " czasu RL)\n\n")

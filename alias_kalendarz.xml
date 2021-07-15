@@ -7,7 +7,7 @@
 			<script>local kal_komenda, kal_param
 
 
-if not kal_wariant then kal_wariant = 0 end
+if not kal_wariant then kal_wariant = 6 end
 
 kal_komenda = getCmdLine()
 kal_param = string.split(kal_komenda, " ")
